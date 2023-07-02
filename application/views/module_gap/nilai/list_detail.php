@@ -11,8 +11,7 @@
       <div class="row">
         <div class="col-lg-12">
           <div class="card">
-            <div class="card-header">
-              <i class="fa fa-align-justify"></i>Tabel Detail Nilai Alternatif
+            <div class="card-header">Tabel Detail Nilai Alternatif
             </div>
             <div class="card-body">
               <nav>
@@ -38,10 +37,10 @@
                         <?php echo $row->id_penilaian; ?>
                       </td>
                       <td>
-                        <?php echo $row->nisn; ?>
+                        <?php echo $row->nk; ?>
                       </td>
                       <td>
-                        <?php echo $row->nama_siswa; ?>
+                        <?php echo $row->nama_karyawan; ?>
                       </td>
                       <td>
                         <?php echo $row->nama_subkriteria; ?>

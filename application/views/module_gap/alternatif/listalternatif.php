@@ -14,21 +14,16 @@
           <?php echo $this->session->flashdata('ubah'); ?>
           <?php echo $this->session->flashdata('hapus'); ?>
           <div class="card">
-            <div class="card-header">
-              <i class="fa fa-align-justify"></i>Tabel Data Alternatif
+            <div class="card-header">Tabel Data Alternatif
             </div>
             <div class="card-body">
               <nav>
                 <form method="post">
-                  <ul class="pagination">
-                    <li class="page-item">
-                      <a class="page-link"
-                        href="<?php echo base_url('index.php/data_alternatif1/create'); ?>">Tambah</a>
-                    </li>&nbsp;&nbsp;
-                    <li class="page-item">
-                      <input class="form-control" type="text" placeholder="Masukan nisn atau nama" name="kunci">
-                    </li>
-                  </ul>
+
+                  <a class="btn btn-primary float-right"
+                    href="<?php echo base_url('index.php/data_alternatif1/create'); ?>">+ Tambah Alternatif</a>
+                  <br>
+                  <br>
               </nav>
               <table class="table table-responsive-sm table-bordered table-striped table-sm">
                 <thead>
@@ -48,16 +43,16 @@
                   <tbody>
                     <tr>
                       <td>
-                        <?php echo $row->nisn; ?>
+                        <?php echo $row->nk; ?>
                       </td>
                       <td>
-                        <?php echo $row->nama_siswa; ?>
+                        <?php echo $row->nama_karyawan; ?>
                       </td>
                       <td>
                         <?php echo $row->jenis_kelamin; ?>
                       </td>
                       <td>
-                        <?php echo $row->asal_sekolah; ?>
+                        <?php echo $row->divisi; ?>
                       </td>
                       <td>
                         <span class="badge badge-warning"><a

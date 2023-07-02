@@ -49,7 +49,7 @@ class Data_nilaiakhir1 extends CI_Controller
 			$this->model->nilai_un[$i] = $rows2->nilai;
 			$this->model->id_alternatif[$i] = $rows2->id_alternatif;
 			$this->nisn_awal[$i] = $rows2->nisn;
-			$this->nama_awal[$i] = $rows2->nama_siswa;
+			$this->nama_awal[$i] = $rows2->nama_karyawan;
 		}
 		$query3 = $this->db->query("select c.nilai_target from penilaian a join alternatif b on a.id_alternatif=b.id_alternatif join subkriteria c on a.id_subkriteria=c.id_subkriteria where a.id_subkriteria='SK001'");
 		$rows3 = $query3->row();

@@ -55,10 +55,10 @@
                 <thead>
                   <tr>
                     <th>ID</th>
-                    <th>NISN</th>
-                    <th>NAMA SISWA</th>
+                    <th>NK</th>
+                    <th>NAMA KARYAWAN</th>
                     <th>JENIS KELAMIN</th>
-                    <th>ASAL SEKOLAH</th>
+                    <th>DIVISI</th>
                     <th>KELOLA</th>
                   </tr>
                 </thead>
@@ -72,16 +72,16 @@
                         <?php echo $row->id_penilaian; ?>
                       </td>
                       <td>
-                        <?php echo $row->nisn; ?>
+                        <?php echo $row->nk; ?>
                       </td>
                       <td>
-                        <?php echo $row->nama_siswa; ?>
+                        <?php echo $row->nama_karyawan; ?>
                       </td>
                       <td>
                         <?php echo $row->jenis_kelamin; ?>
                       </td>
                       <td>
-                        <?php echo $row->asal_sekolah; ?>
+                        <?php echo $row->divisi; ?>
                       </td>
                       <td align="center">
                         <span class="badge badge-warning"><a

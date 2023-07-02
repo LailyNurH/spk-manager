@@ -54,10 +54,10 @@
                             <?php echo $no; ?>
                           </td>
                           <td>
-                            <?php echo $row->nisn; ?>
+                            <?php echo $row->nk; ?>
                           </td>
                           <td>
-                            <?php echo $row->nama_siswa; ?>
+                            <?php echo $row->nama_karyawan; ?>
                           </td>
                           <td>
                             <?php echo $row->nilai ?>
@@ -91,6 +91,7 @@
                         <th>
                           <?php echo $target_kejuruan; ?>
                         </th>
+
                       </tr>
 
                       <tr align="center">
@@ -106,10 +107,10 @@
                             <?php echo $no; ?>
                           </td>
                           <td>
-                            <?php echo $row->nisn; ?>
+                            <?php echo $row->nk; ?>
                           </td>
                           <td>
-                            <?php echo $row->nama_siswa; ?>
+                            <?php echo $row->nama_karyawan; ?>
                           </td>
                           <td>
                             <?php echo $row->gap; ?>
@@ -144,10 +145,10 @@
                             <?php echo $no; ?>
                           </td>
                           <td>
-                            <?php echo $row->nisn; ?>
+                            <?php echo $row->nk; ?>
                           </td>
                           <td>
-                            <?php echo $row->nama_siswa; ?>
+                            <?php echo $row->nama_karyawan; ?>
                           </td>
                           <td>
                             <?php echo $row->nilai_bobot; ?>
@@ -196,7 +197,7 @@
                     <thead>
                       <tr align="center">
                         <th>NO</th>
-                        <th>NISN</th>
+                        <th>nk</th>
                         <th>NAMA SISWA</th>
                         <?php
                         foreach ($this->model->subkriteria_keagamaan as $nama_kriteria) {
@@ -219,10 +220,10 @@
                             <?php echo $no; ?>
                           </td>
                           <td>
-                            <?php echo $row->nisn; ?>
+                            <?php echo $row->nk; ?>
                           </td>
                           <td>
-                            <?php echo $row->nama_siswa; ?>
+                            <?php echo $row->nama_karyawan; ?>
                           </td>
                           <td>
                             <?php echo $row->nilai ?>
@@ -264,10 +265,10 @@
                             <?php echo $no; ?>
                           </td>
                           <td>
-                            <?php echo $row->nisn; ?>
+                            <?php echo $row->nk; ?>
                           </td>
                           <td>
-                            <?php echo $row->nama_siswa; ?>
+                            <?php echo $row->nama_karyawan; ?>
                           </td>
                           <td>
                             <?php echo $row->gap; ?>
@@ -301,10 +302,10 @@
                             <?php echo $no; ?>
                           </td>
                           <td>
-                            <?php echo $row->nisn; ?>
+                            <?php echo $row->nk; ?>
                           </td>
                           <td>
-                            <?php echo $row->nama_siswa; ?>
+                            <?php echo $row->nama_karyawan; ?>
                           </td>
                           <td>
                             <?php echo $row->nilai_bobot; ?>
@@ -352,7 +353,7 @@
                     <thead>
                       <tr align="center">
                         <th>NO</th>
-                        <th>NISN</th>
+                        <th>nk</th>
                         <th>NAMA SISWA</th>
                         <?php
                         foreach ($this->model->subkriteria_kesehatan as $nama_kriteria) {
@@ -375,10 +376,10 @@
                             <?php echo $no; ?>
                           </td>
                           <td>
-                            <?php echo $row->nisn; ?>
+                            <?php echo $row->nk; ?>
                           </td>
                           <td>
-                            <?php echo $row->nama_siswa; ?>
+                            <?php echo $row->nama_karyawan; ?>
                           </td>
                           <td>
                             <?php echo $row->nilai ?>
@@ -420,10 +421,10 @@
                             <?php echo $no; ?>
                           </td>
                           <td>
-                            <?php echo $row->nisn; ?>
+                            <?php echo $row->nk; ?>
                           </td>
                           <td>
-                            <?php echo $row->nama_siswa; ?>
+                            <?php echo $row->nama_karyawan; ?>
                           </td>
                           <td>
                             <?php echo $row->gap; ?>
@@ -455,10 +456,10 @@
                             <?php echo $no; ?>
                           </td>
                           <td>
-                            <?php echo $row->nisn; ?>
+                            <?php echo $row->nk; ?>
                           </td>
                           <td>
-                            <?php echo $row->nama_siswa; ?>
+                            <?php echo $row->nama_karyawan; ?>
                           </td>
                           <td>
                             <?php echo $row->nilai_bobot; ?>
@@ -501,7 +502,7 @@
 
                     <thead>
                       <tr align="center">
-                        <th>NISN</th>
+                        <th>nk</th>
                         <th>NAMA SISWA</th>
                         <th>TOTAL NILAI</th>
                         <th>RANKING</th>
@@ -516,10 +517,10 @@
                         ?>
                         <tr align="center">
                           <td>
-                            <?php echo $row->nisn; ?>
+                            <?php echo $row->nk; ?>
                           </td>
                           <td>
-                            <?php echo $row->nama_siswa; ?>
+                            <?php echo $row->nama_karyawan; ?>
                           </td>
                           <td>
                             <?php echo $row->total; ?>

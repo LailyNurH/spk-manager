@@ -22,16 +22,10 @@ class Data_alternatif1 extends CI_Controller
 	public function create()
 	{
 		if (isset($_POST['btnSubmit'])) {
-			$config = [
-				'upload_path' => './uploads/',
-				'allowed_types' => 'jpg|png',
-				'encrypt_name' => TRUE
-			];
-			$this->load->library('upload', $config);
-			$this->model->nisn = $_POST['nisn'];
-			$this->model->nama_siswa = $_POST['nama_siswa'];
+			$this->model->nisn = $_POST['nk'];
+			$this->model->nama_siswa = $_POST['nama_karyawan'];
 			$this->model->jenis_kelamin = $_POST['jenis_kelamin'];
-			$this->model->asal_sekolah = $_POST['asal_sekolah'];
+			$this->model->asal_sekolah = $_POST['divisi'];
 			$this->model->insert();
 			$this->session->set_flashdata(
 				'tambah',
