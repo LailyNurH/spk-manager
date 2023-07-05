@@ -67,7 +67,7 @@ class Nilai_model extends CI_Model
 
 	public function delete1()
 	{
-		$this->db->where('nisn', $this->nisn);
+		$this->db->where('nk', $this->nk);
 		$this->db->delete('penilaian');
 
 	}
@@ -325,8 +325,8 @@ class Nilai_model extends CI_Model
 			->from('penilaian a')
 			->join('alternatif b', 'a.id_alternatif = b.id_alternatif')
 			->join('subkriteria c', 'a.id_subkriteria = c.id_subkriteria')
-			->like('b.nisn', $kunci)
-			->or_like('b.nama_siswa', $kunci)
+			->like('b.nk', $kunci)
+			->or_like('b.nama_karyawan', $kunci)
 			->group_by('a.id_alternatif');
 		$query = $this->db->get();
 		return $query;
@@ -334,7 +334,7 @@ class Nilai_model extends CI_Model
 
 	public function validasi_delete()
 	{
-		$this->where = array('nisn' => $this->nisn);
+		$this->where = array('nk' => $this->nk);
 		$this->db->select('*')
 			->from('penilaian')
 			->where($this->where);

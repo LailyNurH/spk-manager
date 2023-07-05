@@ -80,16 +80,16 @@
                       <tr align="center">
                         <th colspan="3">Nilai Target</th>
                         <th>
-                          <?php echo $target_un; ?>
+                          <?php echo $target_kriteria1; ?>
                         </th>
                         <th>
-                          <?php echo $target_raport; ?>
+                          <?php echo $target_kriteria2; ?>
                         </th>
                         <th>
-                          <?php echo $target_kejuruan; ?>
+                          <?php echo $target_kriteria3; ?>
                         </th>
                         <th>
-                          <?php echo $target_kejuruan; ?>
+                          <?php echo $target_kriteria4; ?>
                         </th>
 
                       </tr>
@@ -243,13 +243,16 @@
                       <tr align="center">
                         <th colspan="3">Nilai Target</th>
                         <th>
-                          <?php echo $target_alquran; ?>
+                          <?php echo $target_kriteria1; ?>
                         </th>
                         <th>
-                          <?php echo $target_shalat; ?>
+                          <?php echo $target_kriteria2; ?>
                         </th>
                         <th>
-                          <?php echo $target_surat; ?>
+                          <?php echo $target_kriteria3; ?>
+                        </th>
+                        <th>
+                          <?php echo $target_kriteria4; ?>
                         </th>
                       </tr>
                       <tr align="center">
@@ -275,6 +278,9 @@
                           </td>
                           <td>
                             <?php echo $data22->row($i)->gap; ?>
+                          </td>
+                          <td>
+                            <?php echo $data23->row($i)->gap; ?>
                           </td>
                           <td>
                             <?php echo $data23->row($i)->gap; ?>
@@ -343,9 +349,6 @@
                   </table>
                 </div>
 
-
-
-
                 <div class="table-responsive">
                   <h4><b>Tabel Nilai Kriteria Kesehatan</b></h4>
                   <table class="table table-responsive-sm table-bordered table-striped table-sm">
@@ -353,7 +356,7 @@
                     <thead>
                       <tr align="center">
                         <th>NO</th>
-                        <th>nk</th>
+                        <th>NK</th>
                         <th>NAMA SISWA</th>
                         <?php
                         foreach ($this->model->subkriteria_kesehatan as $nama_kriteria) {
@@ -399,13 +402,13 @@
                       <tr align="center">
                         <th colspan="3">Nilai Target</th>
                         <th>
-                          <?php echo $target_butawarna; ?>
+                          <?php echo $target_kriteria1; ?>
                         </th>
                         <th>
-                          <?php echo $target_perokok; ?>
+                          <?php echo $target_kriteria2; ?>
                         </th>
                         <th>
-                          <?php echo $target_tb; ?>
+                          <?php echo $target_kriteria3; ?>
                         </th>
                       </tr>
                       <tr align="center">
@@ -502,7 +505,7 @@
 
                     <thead>
                       <tr align="center">
-                        <th>nk</th>
+                        <th>NK</th>
                         <th>NAMA SISWA</th>
                         <th>TOTAL NILAI</th>
                         <th>RANKING</th>

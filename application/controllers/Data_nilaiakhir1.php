@@ -40,7 +40,7 @@ class Data_nilaiakhir1 extends CI_Controller
 		$query5 = $this->db->query("select distinct(id_alternatif) from penilaian");
 		$rows5 = $query5->num_rows();
 		$this->model->jumlah = $rows5;
-		//NILAI_UN (SK001)
+		//KRITERIA 1
 		$query1 = $this->db->query("select nilai from penilaian a join alternatif b on a.id_alternatif=b.id_alternatif join subkriteria c on a.id_subkriteria=c.id_subkriteria where a.id_subkriteria='SK001'");
 		$rows1 = $query1->num_rows();
 		$query2 = $this->db->query("select * from penilaian a join alternatif b on a.id_alternatif=b.id_alternatif join subkriteria c on a.id_subkriteria=c.id_subkriteria where a.id_subkriteria='SK001'");
@@ -53,10 +53,10 @@ class Data_nilaiakhir1 extends CI_Controller
 		}
 		$query3 = $this->db->query("select c.nilai_target from penilaian a join alternatif b on a.id_alternatif=b.id_alternatif join subkriteria c on a.id_subkriteria=c.id_subkriteria where a.id_subkriteria='SK001'");
 		$rows3 = $query3->row();
-		$this->model->target_un = $rows3->nilai_target;
+		$this->model->target_kriteria1 = $rows3->nilai_target;
 
 		for ($i = 0; $i < $rows1; $i++) {
-			$this->model->gap1[$i] = $this->model->nilai_un[$i] - $this->model->target_un;
+			$this->model->gap1[$i] = $this->model->nilai_un[$i] - $this->model->target_kriteria1;
 			$gap11 = $this->model->gap1[$i];
 			$query4 = $this->db->query("select * from pembobotan where selisih=$gap11");
 			$this->model->bobot_gap1[$i] = $query4->row()->bobot_nilai;
@@ -64,7 +64,7 @@ class Data_nilaiakhir1 extends CI_Controller
 		}
 		$this->model->update_sk1();
 
-		//NILAI_RAPORT (SK002)
+		//KRITERIA2
 		$query1 = $this->db->query("select nilai from penilaian a join alternatif b on a.id_alternatif=b.id_alternatif join subkriteria c on a.id_subkriteria=c.id_subkriteria where a.id_subkriteria='SK002'");
 		$rows1 = $query1->num_rows();
 		$query2 = $this->db->query("select * from penilaian a join alternatif b on a.id_alternatif=b.id_alternatif join subkriteria c on a.id_subkriteria=c.id_subkriteria where a.id_subkriteria='SK002'");
@@ -74,18 +74,19 @@ class Data_nilaiakhir1 extends CI_Controller
 		}
 		$query3 = $this->db->query("select c.nilai_target from penilaian a join alternatif b on a.id_alternatif=b.id_alternatif join subkriteria c on a.id_subkriteria=c.id_subkriteria where a.id_subkriteria='SK002'");
 		$rows3 = $query3->row();
-		$this->model->target_raport = $rows3->nilai_target;
+		$this->model->target_kriteria2 = $rows3->nilai_target;
 
 		for ($i = 0; $i < $rows1; $i++) {
-			$this->model->gap2[$i] = $this->model->nilai_raport[$i] - $this->model->target_raport;
+			$this->model->gap2[$i] = $this->model->nilai_raport[$i] - $this->model->target_kriteria2;
 			$gap22 = $this->model->gap2[$i];
 			$query4 = $this->db->query("select * from pembobotan where selisih=$gap22");
 			$this->model->bobot_gap2[$i] = $query4->row()->bobot_nilai;
 			$gap22 = 0;
 		}
-		$this->model->update_sk2();
 
-		//NILAI_PRAKTIK_KEJURUAN (SK003)
+
+		//KRITERIA 3
+
 		$query1 = $this->db->query("select nilai from penilaian a join alternatif b on a.id_alternatif=b.id_alternatif join subkriteria c on a.id_subkriteria=c.id_subkriteria where a.id_subkriteria='SK003'");
 		$rows1 = $query1->num_rows();
 		$query2 = $this->db->query("select * from penilaian a join alternatif b on a.id_alternatif=b.id_alternatif join subkriteria c on a.id_subkriteria=c.id_subkriteria where a.id_subkriteria='SK003'");
@@ -95,19 +96,18 @@ class Data_nilaiakhir1 extends CI_Controller
 		}
 		$query3 = $this->db->query("select c.nilai_target from penilaian a join alternatif b on a.id_alternatif=b.id_alternatif join subkriteria c on a.id_subkriteria=c.id_subkriteria where a.id_subkriteria='SK003'");
 		$rows3 = $query3->row();
-		$this->model->target_kejuruan = $rows3->nilai_target;
+		$this->model->target_kriteria3 = $rows3->nilai_target;
 
 		for ($i = 0; $i < $rows1; $i++) {
-			$this->model->gap3[$i] = $this->model->nilai_kejuruan[$i] - $this->model->target_kejuruan;
+			$this->model->gap3[$i] = $this->model->nilai_kejuruan[$i] - $this->model->target_kriteria3;
 			$gap33 = $this->model->gap3[$i];
 			$query4 = $this->db->query("select * from pembobotan where selisih=$gap33");
 			$this->model->bobot_gap3[$i] = $query4->row()->bobot_nilai;
 			$gap33 = 0;
 		}
-		$this->model->update_sk3();
 
 
-		//NILAI_MEMBACA_AL-QUR'AN (SK004)
+		//KRITERIA 4
 		$query1 = $this->db->query("select nilai from penilaian a join alternatif b on a.id_alternatif=b.id_alternatif join subkriteria c on a.id_subkriteria=c.id_subkriteria where a.id_subkriteria='SK004'");
 		$rows1 = $query1->num_rows();
 		$query2 = $this->db->query("select * from penilaian a join alternatif b on a.id_alternatif=b.id_alternatif join subkriteria c on a.id_subkriteria=c.id_subkriteria where a.id_subkriteria='SK004'");
@@ -117,18 +117,17 @@ class Data_nilaiakhir1 extends CI_Controller
 		}
 		$query3 = $this->db->query("select c.nilai_target from penilaian a join alternatif b on a.id_alternatif=b.id_alternatif join subkriteria c on a.id_subkriteria=c.id_subkriteria where a.id_subkriteria='SK004'");
 		$rows3 = $query3->row();
-		$this->model->target_alquran = $rows3->nilai_target;
+		$this->model->target_kriteria4 = $rows3->nilai_target;
 
 		for ($i = 0; $i < $rows1; $i++) {
-			$this->model->gap4[$i] = $this->model->nilai_alquran[$i] - $this->model->target_alquran;
+			$this->model->gap4[$i] = $this->model->nilai_alquran[$i] - $this->model->target_kriteria4;
 			$gap44 = $this->model->gap4[$i];
 			$query4 = $this->db->query("select * from pembobotan where selisih=$gap44");
 			$this->model->bobot_gap4[$i] = $query4->row()->bobot_nilai;
 			$gap44 = 0;
 		}
-		$this->model->update_sk4();
 
-		//NILAI_TATA_CARA_SHALAT (SK005)
+		//KRITERIA 5
 		$query1 = $this->db->query("select nilai from penilaian a join alternatif b on a.id_alternatif=b.id_alternatif join subkriteria c on a.id_subkriteria=c.id_subkriteria where a.id_subkriteria='SK005'");
 		$rows1 = $query1->num_rows();
 		$query2 = $this->db->query("select * from penilaian a join alternatif b on a.id_alternatif=b.id_alternatif join subkriteria c on a.id_subkriteria=c.id_subkriteria where a.id_subkriteria='SK005'");
@@ -138,19 +137,18 @@ class Data_nilaiakhir1 extends CI_Controller
 		}
 		$query3 = $this->db->query("select c.nilai_target from penilaian a join alternatif b on a.id_alternatif=b.id_alternatif join subkriteria c on a.id_subkriteria=c.id_subkriteria where a.id_subkriteria='SK005'");
 		$rows3 = $query3->row();
-		$this->model->target_shalat = $rows3->nilai_target;
+		$this->model->target_kriteria5 = $rows3->nilai_target;
 
 		for ($i = 0; $i < $rows1; $i++) {
-			$this->model->gap5[$i] = $this->model->nilai_shalat[$i] - $this->model->target_shalat;
+			$this->model->gap5[$i] = $this->model->nilai_shalat[$i] - $this->model->target_kriteria5;
 			$gap55 = $this->model->gap5[$i];
 			$query4 = $this->db->query("select * from pembobotan where selisih=$gap55");
 			$this->model->bobot_gap5[$i] = $query4->row()->bobot_nilai;
 			$gap55 = 0;
 		}
-		$this->model->update_sk5();
 
 
-		//NILAI_HAFALAN_SURAT (SK006)
+		//KRITERIA 6
 		$query1 = $this->db->query("select nilai from penilaian a join alternatif b on a.id_alternatif=b.id_alternatif join subkriteria c on a.id_subkriteria=c.id_subkriteria where a.id_subkriteria='SK006'");
 		$rows1 = $query1->num_rows();
 		$query2 = $this->db->query("select * from penilaian a join alternatif b on a.id_alternatif=b.id_alternatif join subkriteria c on a.id_subkriteria=c.id_subkriteria where a.id_subkriteria='SK006'");
@@ -160,18 +158,17 @@ class Data_nilaiakhir1 extends CI_Controller
 		}
 		$query3 = $this->db->query("select c.nilai_target from penilaian a join alternatif b on a.id_alternatif=b.id_alternatif join subkriteria c on a.id_subkriteria=c.id_subkriteria where a.id_subkriteria='SK006'");
 		$rows3 = $query3->row();
-		$this->model->target_surat = $rows3->nilai_target;
+		$this->model->target_kriteria6 = $rows3->nilai_target;
 
 		for ($i = 0; $i < $rows1; $i++) {
-			$this->model->gap6[$i] = $this->model->nilai_surat[$i] - $this->model->target_surat;
+			$this->model->gap6[$i] = $this->model->nilai_surat[$i] - $this->model->target_kriteria6;
 			$gap66 = $this->model->gap6[$i];
 			$query4 = $this->db->query("select * from pembobotan where selisih=$gap66");
 			$this->model->bobot_gap6[$i] = $query4->row()->bobot_nilai;
 			$gap66 = 0;
 		}
-		$this->model->update_sk6();
 
-		//NILAI_BUTAWARNA (SK007)
+		//KRITERIA 7
 		$query1 = $this->db->query("select nilai from penilaian a join alternatif b on a.id_alternatif=b.id_alternatif join subkriteria c on a.id_subkriteria=c.id_subkriteria where a.id_subkriteria='SK007'");
 		$rows1 = $query1->num_rows();
 		$query2 = $this->db->query("select * from penilaian a join alternatif b on a.id_alternatif=b.id_alternatif join subkriteria c on a.id_subkriteria=c.id_subkriteria where a.id_subkriteria='SK007'");
@@ -181,18 +178,17 @@ class Data_nilaiakhir1 extends CI_Controller
 		}
 		$query3 = $this->db->query("select c.nilai_target from penilaian a join alternatif b on a.id_alternatif=b.id_alternatif join subkriteria c on a.id_subkriteria=c.id_subkriteria where a.id_subkriteria='SK007'");
 		$rows3 = $query3->row();
-		$this->model->target_butawarna = $rows3->nilai_target;
+		$this->model->target_kriteria7 = $rows3->nilai_target;
 
 		for ($i = 0; $i < $rows1; $i++) {
-			$this->model->gap7[$i] = $this->model->nilai_butawarna[$i] - $this->model->target_butawarna;
+			$this->model->gap7[$i] = $this->model->nilai_butawarna[$i] - $this->model->target_kriteria7;
 			$gap77 = $this->model->gap7[$i];
 			$query4 = $this->db->query("select * from pembobotan where selisih=$gap77");
 			$this->model->bobot_gap7[$i] = $query4->row()->bobot_nilai;
 			$gap77 = 0;
 		}
-		$this->model->update_sk7();
 
-		//NILAI_PEROKOK (SK008)
+		//KRITERIA 8
 		$query1 = $this->db->query("select nilai from penilaian a join alternatif b on a.id_alternatif=b.id_alternatif join subkriteria c on a.id_subkriteria=c.id_subkriteria where a.id_subkriteria='SK008'");
 		$rows1 = $query1->num_rows();
 		$query2 = $this->db->query("select * from penilaian a join alternatif b on a.id_alternatif=b.id_alternatif join subkriteria c on a.id_subkriteria=c.id_subkriteria where a.id_subkriteria='SK008'");
@@ -202,18 +198,17 @@ class Data_nilaiakhir1 extends CI_Controller
 		}
 		$query3 = $this->db->query("select c.nilai_target from penilaian a join alternatif b on a.id_alternatif=b.id_alternatif join subkriteria c on a.id_subkriteria=c.id_subkriteria where a.id_subkriteria='SK008'");
 		$rows3 = $query3->row();
-		$this->model->target_perokok = $rows3->nilai_target;
+		$this->model->target_kriteria8 = $rows3->nilai_target;
 
 		for ($i = 0; $i < $rows1; $i++) {
-			$this->model->gap8[$i] = $this->model->nilai_perokok[$i] - $this->model->target_perokok;
+			$this->model->gap8[$i] = $this->model->nilai_perokok[$i] - $this->model->target_kriteria8;
 			$gap88 = $this->model->gap8[$i];
 			$query4 = $this->db->query("select * from pembobotan where selisih=$gap88");
 			$this->model->bobot_gap8[$i] = $query4->row()->bobot_nilai;
 			$gap88 = 0;
 		}
-		$this->model->update_sk8();
 
-		//NILAI_PEROKOK (SK009)
+		//KRITERIA 9
 		$query1 = $this->db->query("select nilai from penilaian a join alternatif b on a.id_alternatif=b.id_alternatif join subkriteria c on a.id_subkriteria=c.id_subkriteria where a.id_subkriteria='SK009'");
 		$rows1 = $query1->num_rows();
 		$query2 = $this->db->query("select * from penilaian a join alternatif b on a.id_alternatif=b.id_alternatif join subkriteria c on a.id_subkriteria=c.id_subkriteria where a.id_subkriteria='SK009'");
@@ -223,16 +218,35 @@ class Data_nilaiakhir1 extends CI_Controller
 		}
 		$query3 = $this->db->query("select c.nilai_target from penilaian a join alternatif b on a.id_alternatif=b.id_alternatif join subkriteria c on a.id_subkriteria=c.id_subkriteria where a.id_subkriteria='SK009'");
 		$rows3 = $query3->row();
-		$this->model->target_tb = $rows3->nilai_target;
+		$this->model->target_kriteria9 = $rows3->nilai_target;
 
 		for ($i = 0; $i < $rows1; $i++) {
-			$this->model->gap9[$i] = $this->model->nilai_tb[$i] - $this->model->target_tb;
+			$this->model->gap9[$i] = $this->model->nilai_tb[$i] - $this->model->target_kriteria9;
 			$gap99 = $this->model->gap9[$i];
 			$query4 = $this->db->query("select * from pembobotan where selisih=$gap99");
 			$this->model->bobot_gap9[$i] = $query4->row()->bobot_nilai;
 			$gap99 = 0;
 		}
-		$this->model->update_sk9();
+
+		//KRITERIA 10
+		// $query1 = $this->db->query("select nilai from penilaian a join alternatif b on a.id_alternatif=b.id_alternatif join subkriteria c on a.id_subkriteria=c.id_subkriteria where a.id_subkriteria='SK010'");
+		// $rows1 = $query1->num_rows();
+		// $query2 = $this->db->query("select * from penilaian a join alternatif b on a.id_alternatif=b.id_alternatif join subkriteria c on a.id_subkriteria=c.id_subkriteria where a.id_subkriteria='SK010'");
+		// for ($i = 0; $i < $rows1; $i++) {
+		// 	$rows2 = $query2->row($i);
+		// 	$this->model->nilai_tb[$i] = $rows2->nilai;
+		// }
+		// $query3 = $this->db->query("select c.nilai_target from penilaian a join alternatif b on a.id_alternatif=b.id_alternatif join subkriteria c on a.id_subkriteria=c.id_subkriteria where a.id_subkriteria='SK010'");
+		// $rows3 = $query3->row();
+		// $this->model->target_kriteria10 = $rows3->nilai_target;
+
+		// for ($i = 0; $i < $rows1; $i++) {
+		// 	$this->model->gap10[$i] = $this->model->nilai_tb[$i] - $this->model->target_kriteria10;
+		// 	$gap10 = $this->model->gap10[$i];
+		// 	$query4 = $this->db->query("select * from pembobotan where selisih=$gap10");
+		// 	$this->model->bobot_gap10[$i] = $query4->row()->bobot_nilai;
+		// 	$gap10 = 0;
+		// }
 
 		//DONE !
 
@@ -268,6 +282,8 @@ class Data_nilaiakhir1 extends CI_Controller
 		sort($this->model->bobot_gap7);
 		sort($this->model->bobot_gap8);
 		sort($this->model->bobot_gap9);
+		// sort($this->model->bobot_gap10);
+
 
 		$jml_id = implode(",", $this->model->id_alternatif);
 		//CF DAN SF KRITERIA 1
@@ -365,16 +381,16 @@ class Data_nilaiakhir1 extends CI_Controller
 
 		$data['pagination'] = $this->pagination->create_links();
 
-		$this->load->view('module_gap/view_data_nilaiakhir1', [
-			'target_un' => $this->model->target_un,
-			'target_raport' => $this->model->target_raport,
-			'target_kejuruan' => $this->model->target_kejuruan,
-			'target_alquran' => $this->model->target_alquran,
-			'target_shalat' => $this->model->target_shalat,
-			'target_surat' => $this->model->target_surat,
-			'target_butawarna' => $this->model->target_butawarna,
-			'target_perokok' => $this->model->target_perokok,
-			'target_tb' => $this->model->target_tb,
+		$this->load->view('module_gap/view_data_hasilperhitungan', [
+			'target_kriteria1' => $this->model->target_kriteria1,
+			'target_kriteria2' => $this->model->target_kriteria2,
+			'target_kriteria3' => $this->model->target_kriteria3,
+			'target_kriteria4' => $this->model->target_kriteria4,
+			'target_kriteria5' => $this->model->target_kriteria5,
+			'target_kriteria6' => $this->model->target_kriteria6,
+			'target_kriteria7' => $this->model->target_kriteria7,
+			'target_kriteria8' => $this->model->target_kriteria8,
+			'target_kriteria9' => $this->model->target_kriteria9,
 			'subkriteria_penilaian' => $this->model->subkriteria_penilaian,
 			'subkriteria_keagamaan' => $this->model->subkriteria_keagamaan,
 			'subkriteria_kesehatan' => $this->model->subkriteria_kesehatan,
