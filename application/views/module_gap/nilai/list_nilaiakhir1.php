@@ -68,9 +68,7 @@
                           <td>
                             <?php echo $data13->row($i)->nilai; ?>
                           </td>
-                          <td>
 
-                          </td>
                         </tr>
                         <?php
                         $no++;
@@ -80,16 +78,13 @@
                       <tr align="center">
                         <th colspan="3">Nilai Target</th>
                         <th>
-                          <?php echo $target_kriteria1; ?>
+                          <?php echo $target_un; ?>
                         </th>
                         <th>
-                          <?php echo $target_kriteria2; ?>
+                          <?php echo $target_raport; ?>
                         </th>
                         <th>
-                          <?php echo $target_kriteria3; ?>
-                        </th>
-                        <th>
-                          <?php echo $target_kriteria4; ?>
+                          <?php echo $target_kejuruan; ?>
                         </th>
 
                       </tr>
@@ -191,14 +186,14 @@
 
 
                 <div class="table-responsive">
-                  <h4><b>Tabel Nilai Kriteria Keagamaan</b></h4>
+                  <h4><b>Tabel Nilai Kriteria Pengalaman Kerja</b></h4>
                   <table class="table table-responsive-sm table-bordered table-striped table-sm">
 
                     <thead>
                       <tr align="center">
                         <th>NO</th>
                         <th>nk</th>
-                        <th>NAMA SISWA</th>
+                        <th>NAMA KARYAWAN</th>
                         <?php
                         foreach ($this->model->subkriteria_keagamaan as $nama_kriteria) {
                           ?>
@@ -243,17 +238,15 @@
                       <tr align="center">
                         <th colspan="3">Nilai Target</th>
                         <th>
-                          <?php echo $target_kriteria1; ?>
+                          <?php echo $target_un; ?>
                         </th>
                         <th>
-                          <?php echo $target_kriteria2; ?>
+                          <?php echo $target_raport; ?>
                         </th>
                         <th>
-                          <?php echo $target_kriteria3; ?>
+                          <?php echo $target_kejuruan; ?>
                         </th>
-                        <th>
-                          <?php echo $target_kriteria4; ?>
-                        </th>
+
                       </tr>
                       <tr align="center">
                         <th colspan="6">GAP</th>
@@ -282,9 +275,7 @@
                           <td>
                             <?php echo $data23->row($i)->gap; ?>
                           </td>
-                          <td>
-                            <?php echo $data23->row($i)->gap; ?>
-                          </td>
+
                         </tr>
                         <?php
                         $no++;
@@ -350,14 +341,14 @@
                 </div>
 
                 <div class="table-responsive">
-                  <h4><b>Tabel Nilai Kriteria Kesehatan</b></h4>
+                  <h4><b>Tabel Nilai Kepimpinan dan Komunikasi</b></h4>
                   <table class="table table-responsive-sm table-bordered table-striped table-sm">
 
                     <thead>
                       <tr align="center">
                         <th>NO</th>
                         <th>NK</th>
-                        <th>NAMA SISWA</th>
+                        <th>NAMA KARYAWAN</th>
                         <?php
                         foreach ($this->model->subkriteria_kesehatan as $nama_kriteria) {
                           ?>
@@ -402,13 +393,13 @@
                       <tr align="center">
                         <th colspan="3">Nilai Target</th>
                         <th>
-                          <?php echo $target_kriteria1; ?>
+                          <?php echo $target_un; ?>
                         </th>
                         <th>
-                          <?php echo $target_kriteria2; ?>
+                          <?php echo $target_raport; ?>
                         </th>
                         <th>
-                          <?php echo $target_kriteria3; ?>
+                          <?php echo $target_kejuruan; ?>
                         </th>
                       </tr>
                       <tr align="center">
@@ -505,7 +496,7 @@
 
                     <thead>
                       <tr align="center">
-                        <th>NK</th>
+                        <th>nk</th>
                         <th>NAMA SISWA</th>
                         <th>TOTAL NILAI</th>
                         <th>RANKING</th>

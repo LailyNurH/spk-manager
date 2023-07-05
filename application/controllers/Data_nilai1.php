@@ -21,15 +21,15 @@ class Data_nilai1 extends CI_Controller
 	{
 		if (isset($_GET['tambah'])) {
 			$rows = $this->model->select6();
-			$rows1 = $this->model->select_un();
-			$rows2 = $this->model->select_raport();
-			$rows3 = $this->model->select_kejuruan();
-			$rows4 = $this->model->select_alquran();
-			$rows5 = $this->model->select_shalat();
-			$rows6 = $this->model->select_surat();
-			$rows7 = $this->model->select_butawarna();
-			$rows8 = $this->model->select_perokok();
-			$rows9 = $this->model->select_tb();
+			$rows1 = $this->model->select_kriteria1();
+			$rows2 = $this->model->select_kriteria2();
+			$rows3 = $this->model->select_kriteria3();
+			$rows4 = $this->model->select_kriteria4();
+			$rows5 = $this->model->select_kriteria5();
+			$rows6 = $this->model->select_kriteria6();
+			$rows7 = $this->model->select_kriteria7();
+			$rows8 = $this->model->select_kriteria8();
+			$rows9 = $this->model->select_kriteria9();
 			$sk1 = $this->model->select_sk1();
 			$sk2 = $this->model->select_sk2();
 			$sk3 = $this->model->select_sk3();
@@ -74,7 +74,7 @@ class Data_nilai1 extends CI_Controller
 				->where('id_alternatif', $this->model->id_alternatif);
 			$query = $this->db->get();
 			$row = $query->row();
-			$this->model->nisn = $row->nisn;
+			$this->model->nk = $row->nk;
 			$this->model->id_subkriteria[0] = $_POST['id_sk1'];
 			$this->model->id_subkriteria[1] = $_POST['id_sk2'];
 			$this->model->id_subkriteria[2] = $_POST['id_sk3'];
@@ -119,10 +119,10 @@ class Data_nilai1 extends CI_Controller
 
 			$this->load->view('module_gap/view_data_nilai', ['data' => $data]);
 		} else {
-			$config['base_url'] = site_url('data_nilai1/index'); //site url
-			$config['total_rows'] = $this->model->select_count()->num_rows(); //total row
-			$config['per_page'] = 10; //show record per halaman
-			$config["uri_segment"] = 3; // uri parameter
+			$config['base_url'] = site_url('data_nilai1/index');
+			$config['total_rows'] = $this->model->select_count()->num_rows();
+			$config['per_page'] = 10;
+			$config["uri_segment"] = 3;
 			$choice = $config["total_rows"] / $config["per_page"];
 			$config["num_links"] = floor($choice);
 
@@ -130,7 +130,6 @@ class Data_nilai1 extends CI_Controller
 			$this->pagination->initialize($config);
 			$data['page'] = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
 
-			//panggil function get_mahasiswa_list yang ada pada mmodel mahasiswa_model. 
 			$data['data'] = $this->model->select($config["per_page"], $data['page']);
 
 			$data['pagination'] = $this->pagination->create_links();
@@ -285,55 +284,55 @@ class Data_nilai1 extends CI_Controller
 			$rows = $this->model->select6();
 
 			if ($row->id_subkriteria == 'SK001') {
-				$rows1 = $this->model->select_un();
+				$rows1 = $this->model->select_kriteria1();
 				$this->load->view('module_gap/view_ubah_sk1', [
 					'model' => $this->model,
 					'rows1' => $rows1
 				]);
 			} elseif ($row->id_subkriteria == 'SK002') {
-				$rows2 = $this->model->select_raport();
+				$rows2 = $this->model->select_kriteria2();
 				$this->load->view('module_gap/view_ubah_sk2', [
 					'model' => $this->model,
 					'rows2' => $rows2
 				]);
 			} elseif ($row->id_subkriteria == 'SK003') {
-				$rows3 = $this->model->select_kejuruan();
+				$rows3 = $this->model->select_kriteria3();
 				$this->load->view('module_gap/view_ubah_sk3', [
 					'model' => $this->model,
 					'rows3' => $rows3
 				]);
 			} elseif ($row->id_subkriteria == 'SK004') {
-				$rows4 = $this->model->select_alquran();
+				$rows4 = $this->model->select_kriteria4();
 				$this->load->view('module_gap/view_ubah_sk4', [
 					'model' => $this->model,
 					'rows4' => $rows4
 				]);
 			} elseif ($row->id_subkriteria == 'SK005') {
-				$rows5 = $this->model->select_shalat();
+				$rows5 = $this->model->select_kriteria5();
 				$this->load->view('module_gap/view_ubah_sk5', [
 					'model' => $this->model,
 					'rows5' => $rows5
 				]);
 			} elseif ($row->id_subkriteria == 'SK006') {
-				$rows6 = $this->model->select_surat();
+				$rows6 = $this->model->select_kriteria6();
 				$this->load->view('module_gap/view_ubah_sk6', [
 					'model' => $this->model,
 					'rows6' => $rows6
 				]);
 			} elseif ($row->id_subkriteria == 'SK007') {
-				$rows7 = $this->model->select_butawarna();
+				$rows7 = $this->model->select_kriteria7();
 				$this->load->view('module_gap/view_ubah_sk7', [
 					'model' => $this->model,
 					'rows7' => $rows7
 				]);
 			} elseif ($row->id_subkriteria == 'SK008') {
-				$rows8 = $this->model->select_perokok();
+				$rows8 = $this->model->select_kriteria8();
 				$this->load->view('module_gap/view_ubah_sk8', [
 					'model' => $this->model,
 					'rows8' => $rows8
 				]);
 			} else {
-				$rows9 = $this->model->select_tb();
+				$rows9 = $this->model->select_kriteria9();
 				$this->load->view('module_gap/view_ubah_sk9', [
 					'model' => $this->model,
 					'rows9' => $rows9
@@ -369,7 +368,7 @@ class Data_nilai1 extends CI_Controller
 
 	public function delete1()
 	{
-		$this->model->nisn = $_POST['nisn'];
+		$this->model->nk = $_POST['nk'];
 		if ($this->model->validasi_delete() == TRUE) {
 			$this->model->delete1();
 			$this->session->set_flashdata(
@@ -382,12 +381,12 @@ class Data_nilai1 extends CI_Controller
 			);
 			redirect('data_nilai1/index');
 		}
-		if ($this->model->validasi_delete() == FALSE && $_POST['nisn'] != null) {
+		if ($this->model->validasi_delete() == FALSE && $_POST['nk'] != null) {
 			$this->session->set_flashdata(
 				'konfirmasi_hapus',
 				'<div class="alert alert-warning alert-dismissible fade show" role="alert">
     <strong>Data Nilai Alternatif Gagal Dihapus !<br/>
-    NISN yang dimasukan salah !</strong>
+    nk yang dimasukan salah !</strong>
     <button class="close" type="button" data-dismiss="alert" aria-label="Close">
     <span aria-hidden="true">×</span>
     </button></div>'
@@ -398,7 +397,7 @@ class Data_nilai1 extends CI_Controller
 				'konfirmasi_hapus',
 				'<div class="alert alert-warning alert-dismissible fade show" role="alert">
     <strong>Data Nilai Alternatif Gagal Dihapus !<br/>
-    Masukan NISN Alternatif yang Nilainya Ingin Dihapus !</strong>
+    Masukan nk Alternatif yang Nilainya Ingin Dihapus !</strong>
     <button class="close" type="button" data-dismiss="alert" aria-label="Close">
     <span aria-hidden="true">×</span>
     </button></div>'

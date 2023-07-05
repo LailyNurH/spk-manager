@@ -23,7 +23,7 @@
                       <select class="form-control" id="appendedInput" name="id_alternatif">
                         <option>Pilih Salah Satu</option>
                         <?php foreach ($rows as $row) { ?>
-                          <option value='<?php echo $row->id_alternatif; ?>'><?php echo $row->nama_siswa; ?></option>
+                          <option value='<?php echo $row->id_alternatif; ?>'><?php echo $row->nama_karyawan; ?></option>
                         <?php } ?>
                       </select>
                       <div class="input-group-append">

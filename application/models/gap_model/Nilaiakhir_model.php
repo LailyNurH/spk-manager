@@ -103,17 +103,6 @@ class Nilaiakhir_model extends CI_Model
 	}
 
 
-
-	public function cetak_laporan()
-	{
-		$this->db->select('*')
-			->from('ranking a')
-			->join('alternatif b', 'a.id_alternatif = b.id_alternatif')
-			->order_by('total', 'desc');
-		$query = $this->db->get();
-		return $query->result();
-	}
-
 	public function select($limit, $start)
 	{
 		$this->db->select('*')

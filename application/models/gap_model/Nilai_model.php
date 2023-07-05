@@ -4,7 +4,7 @@ class Nilai_model extends CI_Model
 {
 	public $id_penilaian;
 	public $id_alternatif;
-	public $nisn;
+	public $nk;
 	public $id_subkriteria = array();
 	public $nilai = array();
 	public $jumlah;
@@ -20,7 +20,7 @@ class Nilai_model extends CI_Model
 		for ($i = 0; $i < $this->jumlah; $i++) {
 			$data = [
 				'id_alternatif' => $this->id_alternatif,
-				'nisn' => $this->nisn,
+				'nk' => $this->nk,
 				'id_subkriteria' => $this->id_subkriteria[$i],
 				'nilai' => $this->nilai[$i]
 			];
@@ -96,7 +96,7 @@ class Nilai_model extends CI_Model
 		return $query;
 	}
 
-	public function select_un()
+	public function select_kriteria1()
 	{
 		$query = $this->db->query("select id_parameter from parameter where id_subkriteria='SK001' ");
 		$jumlah = $query->num_rows();
@@ -111,7 +111,7 @@ class Nilai_model extends CI_Model
 		return $query->result();
 	}
 
-	public function select_raport()
+	public function select_kriteria2()
 	{
 		$query = $this->db->query("select id_parameter from parameter where id_subkriteria='SK002' ");
 		$jumlah = $query->num_rows();
@@ -126,7 +126,7 @@ class Nilai_model extends CI_Model
 		return $query->result();
 	}
 
-	public function select_kejuruan()
+	public function select_kriteria3()
 	{
 		$query = $this->db->query("select id_parameter from parameter where id_subkriteria='SK003' ");
 		$jumlah = $query->num_rows();
@@ -141,7 +141,7 @@ class Nilai_model extends CI_Model
 		return $query->result();
 	}
 
-	public function select_alquran()
+	public function select_kriteria4()
 	{
 		$query = $this->db->query("select id_parameter from parameter where id_subkriteria='SK004' ");
 		$jumlah = $query->num_rows();
@@ -156,7 +156,7 @@ class Nilai_model extends CI_Model
 		return $query->result();
 	}
 
-	public function select_shalat()
+	public function select_kriteria5()
 	{
 		$query = $this->db->query("select id_parameter from parameter where id_subkriteria='SK005' ");
 		$jumlah = $query->num_rows();
@@ -171,7 +171,7 @@ class Nilai_model extends CI_Model
 		return $query->result();
 	}
 
-	public function select_surat()
+	public function select_kriteria6()
 	{
 		$query = $this->db->query("select id_parameter from parameter where id_subkriteria='SK006' ");
 		$jumlah = $query->num_rows();
@@ -186,7 +186,7 @@ class Nilai_model extends CI_Model
 		return $query->result();
 	}
 
-	public function select_butawarna()
+	public function select_kriteria7()
 	{
 		$query = $this->db->query("select id_parameter from parameter where id_subkriteria='SK007' ");
 		$jumlah = $query->num_rows();
@@ -201,7 +201,7 @@ class Nilai_model extends CI_Model
 		return $query->result();
 	}
 
-	public function select_perokok()
+	public function select_kriteria8()
 	{
 		$query = $this->db->query("select id_parameter from parameter where id_subkriteria='SK008' ");
 		$jumlah = $query->num_rows();
@@ -216,7 +216,7 @@ class Nilai_model extends CI_Model
 		return $query->result();
 	}
 
-	public function select_tb()
+	public function select_kriteria9()
 	{
 		$query = $this->db->query("select id_parameter from parameter where id_subkriteria='SK009' ");
 		$jumlah = $query->num_rows();

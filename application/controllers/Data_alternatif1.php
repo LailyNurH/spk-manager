@@ -22,10 +22,10 @@ class Data_alternatif1 extends CI_Controller
 	public function create()
 	{
 		if (isset($_POST['btnSubmit'])) {
-			$this->model->nisn = $_POST['nk'];
-			$this->model->nama_siswa = $_POST['nama_karyawan'];
+			$this->model->nk = $_POST['nk'];
+			$this->model->nama_karyawan = $_POST['nama_karyawan'];
 			$this->model->jenis_kelamin = $_POST['jenis_kelamin'];
-			$this->model->asal_sekolah = $_POST['divisi'];
+			$this->model->divisi = $_POST['divisi'];
 			$this->model->insert();
 			$this->session->set_flashdata(
 				'tambah',
@@ -62,7 +62,6 @@ class Data_alternatif1 extends CI_Controller
 			$this->pagination->initialize($config);
 			$data['page'] = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
 
-			//panggil function get_mahasiswa_list yang ada pada mmodel mahasiswa_model. 
 			$data['data'] = $this->model->select($config["per_page"], $data['page']);
 
 			$data['pagination'] = $this->pagination->create_links();
@@ -75,10 +74,10 @@ class Data_alternatif1 extends CI_Controller
 	{
 		if (isset($_POST['btnSubmit'])) {
 			$this->model->id = $_POST['id_alternatif'];
-			$this->model->nisn = $_POST['nisn'];
-			$this->model->nama_siswa = $_POST['nama_siswa'];
+			$this->model->nk = $_POST['nk'];
+			$this->model->nama_karyawan = $_POST['nama_karyawan'];
 			$this->model->jenis_kelamin = $_POST['jenis_kelamin'];
-			$this->model->asal_sekolah = $_POST['asal_sekolah'];
+			$this->model->divisi = $_POST['divisi'];
 			$this->model->update();
 			$this->session->set_flashdata(
 				'ubah',

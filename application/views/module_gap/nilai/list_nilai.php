@@ -38,7 +38,7 @@
                         onclick="return confirm('Apakah Anda Yakin Ingin Menghapus Data Nilai Alternatif ?')">Hapus</button>
                     </li>
                     <li class="page-item">
-                      <input class="form-control" type="text" placeholder="Masukan NISN Calon Siswa" name="nisn">
+                      <input class="form-control" type="text" placeholder="Masukan NK Pegawai" name="nk">
                     </li>
                   </ul>
                   <ul class="pagination">

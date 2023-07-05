@@ -17,10 +17,10 @@ class Alternatif_model extends CI_Model
 	public function insert()
 	{
 		$data = [
-			'nisn' => $this->nisn,
-			'nama_siswa' => $this->nama_siswa,
+			'nk' => $this->nk,
+			'nama_karyawan' => $this->nama_karyawan,
 			'jenis_kelamin' => $this->jenis_kelamin,
-			'asal_sekolah' => $this->asal_sekolah
+			'divisi' => $this->divisi
 		];
 		$this->db->insert('alternatif', $data);
 

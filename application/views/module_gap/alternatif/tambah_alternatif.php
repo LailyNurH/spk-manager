@@ -20,7 +20,7 @@
                   <label class="col-form-label" for="appendedInput">NK</label>
                   <div class="controls">
                     <div class="input-group">
-                      <input class="form-control" id="appendedInput" size="16" type="text" name="nisn" required>
+                      <input class="form-control" id="appendedInput" size="16" type="text" name="nk" required>
                       <div class="input-group-append">
                       </div>
                     </div>
@@ -30,7 +30,8 @@
                   <label class="col-form-label" for="appendedInput">NAMA KARYAWAN</label>
                   <div class="controls">
                     <div class="input-group">
-                      <input class="form-control" id="appendedInput" size="16" type="text" name="nama_siswa" required>
+                      <input class="form-control" id="appendedInput" size="16" type="text" name="nama_karyawan"
+                        required>
                       <div class="input-group-append">
                       </div>
                     </div>
@@ -61,7 +62,7 @@
                   <label class="col-form-label" for="appendedInput">POSISI</label>
                   <div class="controls">
                     <div class="input-group">
-                      <input class="form-control" id="appendedInput" size="16" type="text" name="asal_sekolah" required>
+                      <input class="form-control" id="appendedInput" size="16" type="text" name="divisi" required>
                       <div class="input-group-append">
                       </div>
                     </div>
