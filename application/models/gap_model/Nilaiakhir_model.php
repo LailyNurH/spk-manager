@@ -23,47 +23,47 @@ class Nilaiakhir_model extends CI_Model
 	//VARIABEL MIPA
 	public $nama_siswa = array();
 	public $nilai_un = array();
-	public $target_un;
+	public $target_kriteria1;
 	public $gap1 = array();
 	public $bobot_gap1 = array();
 
 	public $nilai_raport = array();
-	public $target_raport;
+	public $target_kriteria2;
 	public $gap2 = array();
 	public $bobot_gap2 = array();
 
 	public $nilai_kejuruan = array();
-	public $target_kejuruan;
+	public $target_kriteria3;
 	public $gap3 = array();
 	public $bobot_gap3 = array();
 
 	public $nilai_alquran = array();
-	public $target_alquran;
+	public $target_kriteria4;
 	public $gap4 = array();
 	public $bobot_gap4 = array();
 
 	public $nilai_shalat = array();
-	public $target_shalat;
+	public $target_kriteria5;
 	public $gap5 = array();
 	public $bobot_gap5 = array();
 
 	public $nilai_surat = array();
-	public $target_surat;
+	public $target_kriteria6;
 	public $gap6 = array();
 	public $bobot_gap6 = array();
 
 	public $nilai_butawarna = array();
-	public $target_butawarna;
+	public $target_kriteria7;
 	public $gap7 = array();
 	public $bobot_gap7 = array();
 
 	public $nilai_perokok = array();
-	public $target_perokok;
+	public $target_kriteria8;
 	public $gap8 = array();
 	public $bobot_gap8 = array();
 
 	public $nilai_tb = array();
-	public $target_tb;
+	public $target_kriteria9;
 	public $gap9 = array();
 	public $bobot_gap9 = array();
 

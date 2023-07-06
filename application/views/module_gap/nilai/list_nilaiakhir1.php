@@ -78,13 +78,13 @@
                       <tr align="center">
                         <th colspan="3">Nilai Target</th>
                         <th>
-                          <?php echo $target_un; ?>
+                          <?php echo $target_kriteria1; ?>
                         </th>
                         <th>
-                          <?php echo $target_raport; ?>
+                          <?php echo $target_kriteria2; ?>
                         </th>
                         <th>
-                          <?php echo $target_kejuruan; ?>
+                          <?php echo $target_kriteria3; ?>
                         </th>
 
                       </tr>
@@ -238,13 +238,13 @@
                       <tr align="center">
                         <th colspan="3">Nilai Target</th>
                         <th>
-                          <?php echo $target_un; ?>
+                          <?php echo $target_kriteria4; ?>
                         </th>
                         <th>
-                          <?php echo $target_raport; ?>
+                          <?php echo $target_kriteria5; ?>
                         </th>
                         <th>
-                          <?php echo $target_kejuruan; ?>
+                          <?php echo $target_kriteria6; ?>
                         </th>
 
                       </tr>
@@ -393,13 +393,13 @@
                       <tr align="center">
                         <th colspan="3">Nilai Target</th>
                         <th>
-                          <?php echo $target_un; ?>
+                          <?php echo $target_kriteria7; ?>
                         </th>
                         <th>
-                          <?php echo $target_raport; ?>
+                          <?php echo $target_kriteria8; ?>
                         </th>
                         <th>
-                          <?php echo $target_kejuruan; ?>
+                          <?php echo $target_kriteria9; ?>
                         </th>
                       </tr>
                       <tr align="center">
